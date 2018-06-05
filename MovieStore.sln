@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieStore", "MovieStore\MovieStore.csproj", "{510D4CEB-5B34-4FDA-A2A4-62A7A30ED310}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{BDDB554F-702F-4C9D-AD88-4A8CB8F58A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{832A1A50-4885-4A41-9912-0A26763BC9B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{510D4CEB-5B34-4FDA-A2A4-62A7A30ED310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510D4CEB-5B34-4FDA-A2A4-62A7A30ED310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{510D4CEB-5B34-4FDA-A2A4-62A7A30ED310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510D4CEB-5B34-4FDA-A2A4-62A7A30ED310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDB554F-702F-4C9D-AD88-4A8CB8F58A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDB554F-702F-4C9D-AD88-4A8CB8F58A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDB554F-702F-4C9D-AD88-4A8CB8F58A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDB554F-702F-4C9D-AD88-4A8CB8F58A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832A1A50-4885-4A41-9912-0A26763BC9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832A1A50-4885-4A41-9912-0A26763BC9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832A1A50-4885-4A41-9912-0A26763BC9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832A1A50-4885-4A41-9912-0A26763BC9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14C18347-220E-4E69-A4D6-DC9CA42C8635}
+	EndGlobalSection
+EndGlobal

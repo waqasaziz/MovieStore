@@ -1,0 +1,31 @@
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.deps.json
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.dll
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.csproj.CoreCompileInputs.cache
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfoInputs.cache
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfo.cs
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.json
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.dev.json
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.pdb
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.dll
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.pdb
+C:\D Drive\RND\@FreeWheel\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.csprojAssemblyReference.cache
+D:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.deps.json
+D:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.json
+D:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.dev.json
+D:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.dll
+D:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.pdb
+D:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.csproj.CoreCompileInputs.cache
+D:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfoInputs.cache
+D:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfo.cs
+D:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.dll
+D:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.pdb
+C:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.deps.json
+C:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.json
+C:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.runtimeconfig.dev.json
+C:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.dll
+C:\Projects\MovieStore\Domain\bin\Debug\netcoreapp2.0\Domain.pdb
+C:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.csproj.CoreCompileInputs.cache
+C:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfoInputs.cache
+C:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfo.cs
+C:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.dll
+C:\Projects\MovieStore\Domain\obj\Debug\netcoreapp2.0\Domain.pdb
