@@ -39,7 +39,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Create_ShouldReturnBadRequest()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             controller.ModelState.AddModelError("MovieId", "The MovieId field is required.");
 
@@ -52,7 +52,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Create_ShouldReturnNotFound()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             // Mocks could be used here, Moq framework
             var model = new CreateMovieRatingModel
@@ -70,7 +70,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Create_ShouldReturnOK()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             // Mocks could be used here, Moq framework
             var model = new CreateMovieRatingModel
@@ -95,7 +95,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Update_ShouldReturnBadRequest()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             controller.ModelState.AddModelError("RatingId", "The RatingId field is required.");
 
@@ -107,7 +107,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Update_ShouldReturnNotFound()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             // Mocks could be used here, Moq framework
             var model = new UpdateMovieRatingModel
@@ -125,7 +125,7 @@ namespace Domain.Tests
         [Fact]
         public async Task Update_ShouldReturnOK()
         {
-            var controller = new MovieRatingController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
+            var controller = new MovieRatingsController(_movieReposioty, _UserRepsitory, _movieRatingRepsitory);
 
             // Mocks could be used here, Moq framework
             var model = new UpdateMovieRatingModel

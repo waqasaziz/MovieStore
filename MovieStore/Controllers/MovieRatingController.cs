@@ -10,15 +10,14 @@ using MovieStore.DataContracts;
 
 namespace MovieStore.Controllers
 {
-    //[Authorize]
-    [Route("api/MovieRatings")]
-    public class MovieRatingController : Controller
+    [Route("api/[Controller]")]
+    public class MovieRatingsController : Controller
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMovieRatingRepository _movieRatingRepository;
 
-        public MovieRatingController(IMovieRepository movieRepository, IUserRepository userRepository, IMovieRatingRepository movieRatingRepository)
+        public MovieRatingsController(IMovieRepository movieRepository, IUserRepository userRepository, IMovieRatingRepository movieRatingRepository)
         {
             _movieRepository = movieRepository;
             _userRepository = userRepository;
