@@ -19,8 +19,7 @@ namespace MovieStore.Controllers
             _movieRepository = movieRepository;
         }
 
-        [HttpGet()]
-        [Route("Search")]
+        [HttpGet("Search")]
         public async Task<IActionResult> GetMoviesAsync(string title = null, int? yearOfRelease = null, string genre = null)
         {
 
