@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Movies/infinity",
+      "launchUrl": "api/Movies/Search?YearOfRelease=2018",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

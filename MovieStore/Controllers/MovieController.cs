@@ -9,28 +9,27 @@ using MovieStore.DataContracts;
 
 namespace MovieStore.Controllers
 {
-    //[Authorize]
-    [Route("api/Movies")]
-    public class MovieController : Controller
+    [Route("api/[Controller]")]
+    public class MoviesController : Controller
     {
         private IMovieRepository _movieRepository;
 
-        public MovieController(IMovieRepository movieRepository)
+        public MoviesController(IMovieRepository movieRepository)
         {
             _movieRepository = movieRepository;
         }
 
         [HttpGet()]
-        [Route("{title?}/{yearofrelease?}/{genre?}")]
-        public async Task<IActionResult> GetMoviesAsync(string title = null, int? yearofrelease = null, string genre = null)
+        [Route("Search")]
+        public async Task<IActionResult> GetMoviesAsync(string title = null, int? yearOfRelease = null, string genre = null)
         {
 
-            if (string.IsNullOrEmpty(title) && yearofrelease == null && string.IsNullOrEmpty(genre))
+            if (string.IsNullOrEmpty(title) && yearOfRelease == null && string.IsNullOrEmpty(genre))
                 return BadRequest();
 
             var genres = genre?.Split(',') ?? Enumerable.Empty<string>();
 
-            var result = (await _movieRepository.GetListAsync(title, yearofrelease, genres)).Select(MovieSearchResult.FromModel);
+            var result = (await _movieRepository.GetListAsync(title, yearOfRelease, genres)).Select(MovieSearchResult.FromModel);
 
             if (!result.Any())
                 return NotFound();

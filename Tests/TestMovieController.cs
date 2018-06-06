@@ -35,7 +35,7 @@ namespace Domain.Tests
         [Fact]
         public async Task GetMovies_ShouldReturnBadRequest()
         {
-            var controller = new MovieController(_movieReposioty);
+            var controller = new MoviesController(_movieReposioty);
 
             var result = await controller.GetMoviesAsync() as BadRequestResult;
 
@@ -46,7 +46,7 @@ namespace Domain.Tests
         public async Task GetMovies_ShouldReturnNotFound()
         {
 
-            var controller = new MovieController(_movieReposioty);
+            var controller = new MoviesController(_movieReposioty);
 
             var result = await controller.GetMoviesAsync("RedSky") as NotFoundResult;
 
@@ -60,7 +60,7 @@ namespace Domain.Tests
         {
             const string MovieTitle = "infinity";
 
-            var controller = new MovieController(_movieReposioty);
+            var controller = new MoviesController(_movieReposioty);
 
             var result = await controller.GetMoviesAsync(MovieTitle) as OkObjectResult;
 
@@ -77,7 +77,7 @@ namespace Domain.Tests
         {
             const string genre = "Mystery";
 
-            var controller = new MovieController(_movieReposioty);
+            var controller = new MoviesController(_movieReposioty);
 
             var result = await controller.GetMoviesAsync(genre: genre) as OkObjectResult;
 
@@ -94,7 +94,7 @@ namespace Domain.Tests
         [Fact]
         public async Task GetTopFiveMovies_ShouldReturnAll()
         {
-            var controller = new MovieController(_movieReposioty);
+            var controller = new MoviesController(_movieReposioty);
 
             var result = await controller.GetTopFiveMoviesAsyn() as OkObjectResult;
 
