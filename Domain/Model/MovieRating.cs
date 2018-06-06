@@ -8,6 +8,7 @@ namespace Domain.Model
 {
     public class MovieRating
     {
+        [Key]
         public int Id { get; set; }
 
         [Range(0, 5)]
