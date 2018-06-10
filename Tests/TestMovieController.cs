@@ -16,26 +16,10 @@ namespace Domain.Tests
 {
     public class TestMovieController
     {
-        private readonly MovieStoreDbContext _dbContext;
-        private readonly IMovieRepository _movieReposioty;
-
-        public TestMovieController()
-        {
-            var options = new DbContextOptionsBuilder<MovieStoreDbContext>()
-                .UseInMemoryDatabase(databaseName: "MovieStore")
-                .Options;
-
-            _dbContext = new MovieStoreDbContext(options);
-
-            InMemomrySeedData.Initialize(_dbContext);
-
-            _movieReposioty = new MovieRepository(_dbContext);
-        }
-
         [Fact]
         public async Task GetMovies_ShouldReturnBadRequest()
         {
-            var controller = new MoviesController(_movieReposioty);
+            var controller = new MoviesController(Mock.Of<IMovieRepository>());
 
             var result = await controller.GetMoviesAsync() as BadRequestResult;
 
@@ -45,31 +29,38 @@ namespace Domain.Tests
         [Fact]
         public async Task GetMovies_ShouldReturnNotFound()
         {
+            using (var context = InMemomryDbContext.Create())
+            {
+                var movieReposioty = new MovieRepository(context);
+                using (var controller = new MoviesController(movieReposioty))
+                {
+                    var result = await controller.GetMoviesAsync("RedSky") as NotFoundResult;
 
-            var controller = new MoviesController(_movieReposioty);
-
-            var result = await controller.GetMoviesAsync("RedSky") as NotFoundResult;
-
-            Assert.NotNull(result);
+                    Assert.NotNull(result);
+                }
+            }
 
         }
-
 
         [Fact]
         public async Task GetMovies_ShouldReturnSingle()
         {
             const string MovieTitle = "infinity";
 
-            var controller = new MoviesController(_movieReposioty);
+            using (var context = InMemomryDbContext.Create())
+            {
+                var movieReposioty = new MovieRepository(context);
+                using (var controller = new MoviesController(movieReposioty))
+                {
+                    var result = await controller.GetMoviesAsync(MovieTitle) as OkObjectResult;
 
-            var result = await controller.GetMoviesAsync(MovieTitle) as OkObjectResult;
+                    var colelction = result.Value as IEnumerable<MovieSearchResult>;
 
-            var colelction = result.Value as IEnumerable<MovieSearchResult>;
-
-            Assert.NotNull(result);
-            Assert.Single(colelction);
-            Assert.Contains(MovieTitle, colelction.Single().Title, StringComparison.InvariantCultureIgnoreCase);
-
+                    Assert.NotNull(result);
+                    Assert.Single(colelction);
+                    Assert.Contains(MovieTitle, colelction.Single().Title, StringComparison.InvariantCultureIgnoreCase);
+                }
+            }
         }
 
         [Fact]
@@ -77,35 +68,43 @@ namespace Domain.Tests
         {
             const string genre = "Mystery";
 
-            var controller = new MoviesController(_movieReposioty);
+            using (var context = InMemomryDbContext.Create())
+            {
+                var movieReposioty = new MovieRepository(context);
+                using (var controller = new MoviesController(movieReposioty))
+                {
 
-            var result = await controller.GetMoviesAsync(genre: genre) as OkObjectResult;
 
-            var movies = result.Value as IEnumerable<MovieSearchResult>;
+                    var result = await controller.GetMoviesAsync(genre: genre) as OkObjectResult;
+                    var movies = result.Value as IEnumerable<MovieSearchResult>;
 
-            Assert.NotNull(result);
-            Assert.Equal(2, movies.Count());
-            Assert.Equal("Gone Girl", movies.First().Title);
-            Assert.Equal("Sherlock Holmes", movies.Last().Title);
-
+                    Assert.NotNull(result);
+                    Assert.Equal(2, movies.Count());
+                    Assert.Equal("Gone Girl", movies.First().Title);
+                    Assert.Equal("Sherlock Holmes", movies.Last().Title);
+                }
+            }
         }
-
 
         [Fact]
         public async Task GetTopFiveMovies_ShouldReturnAll()
         {
-            var controller = new MoviesController(_movieReposioty);
+            using (var context = InMemomryDbContext.Create())
+            {
+                var movieReposioty = new MovieRepository(context);
+                using (var controller = new MoviesController(movieReposioty))
+                {
 
-            var result = await controller.GetTopFiveMoviesAsyn() as OkObjectResult;
+                    var result = await controller.GetTopFiveMoviesAsyn() as OkObjectResult;
+                    var movies = result.Value as IEnumerable<MovieSearchResult>;
 
-            var movies = result.Value as IEnumerable<MovieSearchResult>;
+                    Assert.NotNull(result);
+                    Assert.Equal(5, movies.Count());
+                    Assert.Equal("Avengers: Infinity War", movies.First().Title);
+                    Assert.Equal("Gone Girl", movies.Last().Title);
+                }
+            }
 
-            Assert.NotNull(result);
-            Assert.Equal(5, movies.Count());
-
-            Assert.Equal("Avengers: Infinity War", movies.First().Title);
-            Assert.Equal("Gone Girl", movies.Last().Title);
         }
-
     }
 }

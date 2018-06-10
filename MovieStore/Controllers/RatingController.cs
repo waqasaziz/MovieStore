@@ -49,7 +49,7 @@ namespace MovieStore.Controllers
                     Rating = movieRating.Rating
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Log Exception
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -63,9 +63,12 @@ namespace MovieStore.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            var movie = await _movieRepository.FindByAsync(movieId);
+            if (movie == null)
+                return NotFound($"Coulnd't find any movie with id {movieId}");
 
             var movieRating = await _movieRatingRepository.FindByAsync(ratingId, model.UserName);
-            if (movieRating == null)
+            if (movieRating == null || movieRating.MovieId != movie.Id)
                 return NotFound($"Coulnd't find any movie rating with id {ratingId} and user name {model.UserName}");
 
             try
@@ -78,7 +81,7 @@ namespace MovieStore.Controllers
                     Rating = movieRating.Rating
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Log Exception
                 return StatusCode(StatusCodes.Status500InternalServerError);

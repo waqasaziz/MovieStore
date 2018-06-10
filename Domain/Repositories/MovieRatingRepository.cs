@@ -16,6 +16,8 @@ namespace Domain.Repositories
         Task<MovieRating> CreateAsync(Movie movie, User user, double rating);
 
         Task<MovieRating> UpdateAsync(MovieRating movieRating, double rating);
+
+        Task<MovieRating> FirstAsyc();
     }
 
     public class MovieRatingRepository : IMovieRatingRepository
@@ -61,5 +63,6 @@ namespace Domain.Repositories
             return movieRating;
         }
 
+        public Task<MovieRating> FirstAsyc() => _dbContext.MovieRatings.FirstAsync();
     }
 }

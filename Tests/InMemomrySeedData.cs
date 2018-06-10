@@ -1,15 +1,22 @@
 ﻿using Domain.Model;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Domain
 {
-    public static class InMemomrySeedData
+    public static class InMemomryDbContext
     {
-        public static void Initialize(MovieStoreDbContext context)
+        public static MovieStoreDbContext Create()
         {
+            var options = new DbContextOptionsBuilder<MovieStoreDbContext>()
+                       .UseInMemoryDatabase($"MovieStore-{ Guid.NewGuid().ToString()}")
+                       .Options;
+            var context = new MovieStoreDbContext(options);
+
             var user = new User
             {
                 UserName = "WaqasAziz",
@@ -121,6 +128,8 @@ namespace Domain
             context.Movies.Add(goneGirl);
 
             context.SaveChanges();
+
+            return context;
         }
     }
 }
