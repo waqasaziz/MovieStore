@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Movies/Search?YearOfRelease=2018",
+      "launchUrl": "swagger/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -19,7 +19,7 @@
     "MovieStore": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Movies/infinity",
+      "launchUrl": "swagger/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
