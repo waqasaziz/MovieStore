@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MovieStore
 {
@@ -38,8 +38,16 @@ namespace MovieStore
                 opt.UseSqlServer(Configuration["DefalutConnectionString"]);
             });
 
-        }
+            services.AddSwaggerGen(setup =>
+            {
+                setup.SwaggerDoc("v1", new Info
+                {
+                    Title = "Movie Store API",
+                    Version = "v1"
+                });
+            });
 
+        }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -48,8 +56,15 @@ namespace MovieStore
 
             app.UseAuthentication();
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setup =>
+            {
+                setup.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Store API V1");
+            });
 
             app.UseMvc();
+
         }
     }
 }
