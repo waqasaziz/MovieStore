@@ -35,6 +35,6 @@ namespace Domain.Model
 
         public List<MovieGenre> Genres { get; set; }
 
-        public double AverageRating => Math.Ceiling(Rating.Average(x => x.Rating));
+        public double AverageRating => Rating.Any() ? Math.Ceiling(Rating.Average(x => x.Rating)) : 0d;
     }
 }
