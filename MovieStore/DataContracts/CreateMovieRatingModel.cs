@@ -9,9 +9,6 @@ namespace MovieStore.DataContracts
     public class CreateMovieRatingModel
     {
         [Required]
-        public int? MovieId { get; set; }
-
-        [Required]
         public string UserName { get; set; }
 
         [Required]
